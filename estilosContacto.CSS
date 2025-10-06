@@ -1,0 +1,154 @@
+/* Fondo con imagen */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+/* Fondo oscuro transparente */
+.contacto-container {
+  background: rgba(0, 0, 0, 0.8);
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+}
+
+.titulo {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.titulo h1 {
+  font-size: 2.5rem;
+  color: #ffcc00;
+}
+
+.titulo p {
+  color: #ddd;
+}
+
+.contenido {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+/* FORMULARIO */
+.formulario {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 25px;
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+}
+
+.formulario h2 {
+  color: #ffcc00;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  background: #222;
+  border-radius: 30px;
+  padding: 8px 15px;
+  margin-bottom: 12px;
+}
+
+.input-group img {
+  width: 24px;
+  margin-right: 10px;
+}
+
+.input-group input,
+.input-group textarea {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+.textarea {
+  align-items: flex-start;
+}
+
+.btn-enviar {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(90deg, #ff9900, #ffcc00);
+  color: #222;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-enviar:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #ffaa00, #ffee55);
+}
+
+/* INFORMACIÓN */
+.info-contacto {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 25px;
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+  text-align: center;
+}
+
+.info-contacto h2 {
+  color: #ffcc00;
+}
+
+.info-contacto p {
+  margin: 10px 0;
+  color: #ddd;
+}
+
+.img-info {
+  width: 80px;
+  margin-bottom: 10px;
+}
+
+.img-mapa {
+  width: 100%;
+  border-radius: 15px;
+  margin-top: 15px;
+}
+
+/* REDES */
+.redes {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.redes p {
+  font-weight: bold;
+  color: #ffcc00;
+}
+
+.iconos img {
+  width: 35px;
+  margin: 8px;
+  transition: transform 0.3s;
+}
+
+.iconos img:hover {
+  transform: scale(1.2);
+}
+

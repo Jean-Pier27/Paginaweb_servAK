@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contáctanos – Service Limpieza AK</title>
+
+  <style>
+    :root {
+      --gold: #ffd700;
+      --accent: #00a9b5;
+      --card-bg: rgba(0,0,0,0.75);
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: "Poppins", system-ui, sans-serif;
+      scroll-behavior: smooth;
+      background: #000;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    /* 🌆 Fondo animado con efecto parallax */
+    .background {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background-size: cover;
+      background-position: center;
+      transition: background-image 1.8s ease-in-out, transform 0.5s ease-out;
+      filter: brightness(0.6);
+      will-change: transform;
+    }
+
+    .overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(180deg, rgba(0,0,0,0.4), rgba(0,0,0,0.6));
+      backdrop-filter: blur(2px);
+    }
+
+    /* ---------- CONTENIDO ---------- */
+    .wrap {
+      position: relative;
+      z-index: 2;
+      max-width: 1100px;
+      margin: 50px auto;
+      padding: 30px;
+    }
+
+    .card {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      background: var(--card-bg);
+      border-radius: 18px;
+      padding: 34px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+      backdrop-filter: blur(8px);
+      animation: fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ---------- IZQUIERDA ---------- */
+    .left {
+      flex: 1 1 420px;
+      min-width: 320px;
+    }
+
+    .logo {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .logo img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(255,215,0,0.4);
+      border: 3px solid rgba(255,215,0,0.2);
+      transition: transform .6s cubic-bezier(.2,.9,.2,1);
+    }
+
+    .logo img:hover { transform: scale(1.05); }
+
+    h1 {
+      font-size: 24px;
+      margin: 10px 0 18px;
+      color: var(--gold);
+      text-align: center;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    label {
+      font-size: 13px;
+      color: #eee;
+      margin-bottom: 4px;
+      display: block;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      font-size: 14px;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    input::placeholder, textarea::placeholder { color: #ddd; }
+
+    input:focus, select:focus, textarea:focus {
+      background: rgba(255,255,255,0.2);
+      transform: translateY(-2px);
+      border-color: var(--accent);
+      box-shadow: 0 0 8px rgba(0,169,181,0.5);
+    }
+
+    textarea { resize: vertical; min-height: 100px; }
+    select option { color: #000; }
+
+    /* ---------- BOTONES ---------- */
+    .btn {
+      padding: 12px;
+      border-radius: 10px;
+      cursor: pointer;
+      border: none;
+      font-weight: 600;
+      font-size: 14px;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .btn:hover { transform: translateY(-3px); }
+
+    .btn.primary {
+      background: linear-gradient(90deg, var(--gold), #ffb300);
+      color: #111;
+    }
+
+    .btn.view { background: linear-gradient(90deg, #00a9b5, #00d6e0); color: #fff; }
+    .btn.danger { background: linear-gradient(90deg, #e63946, #ff6b6b); color: #fff; }
+
+    /* ---------- DERECHA ---------- */
+    .right {
+      width: 360px;
+      min-width: 260px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .info {
+      padding: 18px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.08);
+      color: #eee;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+
+    .info h3 { color: var(--gold); margin: 0 0 8px; font-size: 16px; }
+    .info p { margin: 6px 0; font-size: 14px; }
+
+    .socials {
+      display: flex;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .socials a img {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: #fff;
+      padding: 6px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+    }
+
+    /* ---------- MAPA ---------- */
+    .map-wrap {
+      margin-top: 18px;
+      width: 100%;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+      background: #fff;
+      animation: fadeInUp .8s ease both;
+    }
+
+    .map-wrap iframe {
+      width: 100%;
+      height: 360px;
+      border: 0;
+      display: block;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px) scale(.98); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    @media (max-width: 900px) {
+      .card { flex-direction: column; padding: 22px; }
+      .right { width: 100%; }
+      .map-wrap iframe { height: 300px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="background" id="background"></div>
+  <div class="overlay"></div>
+
+  <div class="wrap">
+    <div class="card">
+      <div class="left">
+        <div class="logo">
+          <img src="imagenes/logoak.png" alt="Logo Service Limpieza AK">
+        </div>
+        <h1>Contáctanos – Service Limpieza AK</h1>
+
+        <form id="formContacto">
+          <label>Nombre completo:</label>
+          <input type="text" placeholder="Escribe tu nombre" required>
+
+          <label>Correo electrónico:</label>
+          <input type="email" placeholder="correo@ejemplo.com" required>
+
+          <label>Teléfono:</label>
+          <input type="text" placeholder="996792766" required>
+
+          <label>Asunto:</label>
+          <select required>
+            <option value="">Selecciona un asunto</option>
+            <option>Solicitud de servicio</option>
+            <option>Reclamo o sugerencia</option>
+            <option>Trabajo con nosotros</option>
+            <option>Información general</option>
+            <option>Otros</option>
+          </select>
+
+          <label>Mensaje:</label>
+          <textarea placeholder="Escribe tu mensaje aquí..." required></textarea>
+
+          <button class="btn primary" type="submit">Enviar mensaje</button>
+          <button class="btn view" type="button">Ver registros</button>
+          <button class="btn danger" type="button">Eliminar registros</button>
+        </form>
+      </div>
+
+      <div class="right">
+        <div class="info">
+          <h3>Información de contacto</h3>
+          <p>📞 Teléfono: 996 792 766</p>
+          <p>✉️ Correo: service_limpieza_ak@gmail.com</p>
+          <p>📍 Lima, Perú</p>
+          <div class="socials">
+            <a href="https://www.facebook.com/share/1BdDHDsgRW/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"></a>
+            <a href="https://www.instagram.com/service_limpieza_ak" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png"></a>
+            <a href="https://www.tiktok.com/@service_limpieza_ak" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png"></a>
+          </div>
+        </div>
+
+        <div class="map-wrap">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.3376479882523!2d-77.03785268515552!3d-12.089126445632713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c83ab1dbb3ef%3A0x7b7db0cfba760a5!2sAv.%20Arequipa%2C%20Lima%2C%20Per%C3%BA!5e0!3m2!1ses!2spe!4v1697053656558!5m2!1ses!2spe"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 🌄 Fondo dinámico
+    const fondo = document.getElementById('background');
+    const imagenes = [
+      'https://img.freepik.com/foto-gratis/equipo-limpieza-profesional-trabajando-oficina_23-2149370017.jpg',
+      'https://img.freepik.com/foto-gratis/hombre-limpiando-piso-oficina_23-2148888407.jpg',
+      'https://img.freepik.com/foto-gratis/empleados-limpieza-uniformes-limpiando-oficina_23-2149392219.jpg',
+      'https://img.freepik.com/foto-gratis/mujer-limpieza-profesional-limpiando-escritorio_23-2148888460.jpg'
+    ];
+    let index = 0;
+
+    function cambiarFondo() {
+      fondo.style.backgroundImage = `url('${imagenes[index]}')`;
+      index = (index + 1) % imagenes.length;
+    }
+
+    cambiarFondo();
+    setInterval(cambiarFondo, 6000);
+
+    // 🎞️ Efecto Parallax (mueve el fondo con el scroll)
+    window.addEventListener('scroll', () => {
+      const offset = window.scrollY * 0.3;
+      fondo.style.transform = `translateY(${offset}px) scale(1.05)`;
+    });
+  </script>
+</body>
+</html>
+
