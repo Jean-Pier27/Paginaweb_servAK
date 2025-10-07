@@ -113,7 +113,7 @@ body {
 
 /* ---------- HERO (SECCIÓN PRINCIPAL) ---------- */
 .hero {
-    background-image: url("imagenes/principal.png");
+    background-image: url("/imagenes/principal.png");
     background-size: cover;
     background-position: center;
     height: 75vh;
