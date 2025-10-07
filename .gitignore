@@ -1,0 +1,90 @@
+```
+# -----------------------------
+# Archivos del sistema
+# -----------------------------
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+desktop.ini
+
+# -----------------------------
+# Archivos temporales
+# -----------------------------
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+*.orig
+*.lock
+*.cache
+*.pid
+
+# -----------------------------
+# Node.js / npm / frontend
+# -----------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.vscode/
+dist/
+build/
+coverage/
+.next/
+out/
+.cache/
+.env
+.env.*
+!.env.example
+
+# -----------------------------
+# Dependencias / empaquetado
+# -----------------------------
+*.zip
+*.tar
+*.gz
+*.rar
+
+# -----------------------------
+# Archivos del editor o IDE
+# -----------------------------
+.vscode/
+.idea/
+*.code-workspace
+
+# -----------------------------
+# Sistemas de compilación
+# -----------------------------
+*.sass-cache
+*.npm
+*.eslintcache
+
+# -----------------------------
+# OS específicos
+# -----------------------------
+.Trashes
+.AppleDouble
+.LSOverride
+._*
+
+# -----------------------------
+# Python (si usas scripts)
+# -----------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+*.eggs/
+
+# -----------------------------
+# Mac / Linux ocultos
+# -----------------------------
+*.backup
+*.bak
+*.old
+*~
+```
