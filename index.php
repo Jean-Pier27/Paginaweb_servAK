@@ -1,6 +1,32 @@
 <?php include 'partials.header.php'; ?>
 <main class="container my-5">
 
+  <section class="py-5">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7">
+          <h1 class="display-4 fw-bold"><?php echo nl2br(htmlspecialchars(setting('hero_title'))); ?></h1>
+            
+          <p class="lead mb-4"><?php echo nl2br(htmlspecialchars(setting('hero_subtitle'))); ?></p>
+            
+          <div class="cta d-flex flex-wrap gap-2">
+            <a class="btn btn-light btn-lg" href="#contacto">Solicitar cotización</a>
+            <a class="btn btn-outline-light btn-lg" href="#servicios">Ver servicios</a>
+          </div>
+            
+          <div class="mt-4 d-flex align-items-center gap-3">
+            <a class="text-white fs-4" href="<?php echo setting('facebook'); ?>" target="_blank" title="Facebook"><i class="bi bi-facebook"></i></a>
+            <a class="text-white fs-4" href="<?php echo setting('instagram'); ?>" target="_blank" title="Instagram"><i class="bi bi-instagram"></i></a>
+            <a class="text-white fs-4" href="<?php echo setting('tiktok'); ?>" target="_blank" title="TikTok"><i class="bi bi-tiktok"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <img class="w-100" src="assets/img/principal.png" alt="Imagen principal de la empresa">
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="servicios" class="mb-5">
     <div class="section-title mb-3">
       <h2 class="h3 m-0">Nuestros servicios</h2>
@@ -55,7 +81,7 @@
 
   <section id="opiniones" class="mb-5">
     <div class="section-title mb-3">
-      <h2 class="h3 m-0">Lo que opinan nuestros clientes</h2>
+      <h2 class="h3 m-0">Reseñas</h2>
       <div class="sub">Reseñas positivas de nuestro servicio</div>
     </div>
     <div class="row g-4">
@@ -115,12 +141,12 @@
     <?php endif; ?>
     <form class="row g-3" method="post" action="contact_submit.php">
       <div class="col-md-6">
-        <label class="form-label">Nombre</label>
+        <label class="form-label">Nombres</label>
         <input type="text" name="name" class="form-control" required>
       </div>
       <div class="col-md-3">
         <label class="form-label">Teléfono</label>
-        <input type="text" name="phone" class="form-control">
+        <input type="text" maxlength="9" name="phone" class="form-control">
       </div>
       <div class="col-md-3">
         <label class="form-label">Email</label>
